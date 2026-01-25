@@ -1,1 +1,154 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global Premium Light Design System */
+:root {
+    /* Colors - Clean/Premium Light Palette */
+    --bg-primary: #f8fafc;
+    /* Very light slate/white */
+    --bg-secondary: #ffffff;
+    /* Pure white */
+    --bg-tertiary: #f1f5f9;
+    /* Light gray for distinction */
+
+    --card-bg: rgba(255, 255, 255, 0.85);
+    /* Frosty white */
+    --card-border: rgba(0, 0, 0, 0.05);
+    --glass-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+
+    --primary: #6366f1;
+    /* Indigo - Kept for brand identity, works well on light */
+    --primary-glow: rgba(99, 102, 241, 0.2);
+    --secondary: #ec4899;
+    /* Pink */
+    --accent: #06b6d4;
+    /* Cyan (Darker for contrast on light) */
+
+    --text-primary: #1e293b;
+    /* Slate 800 - Soft Black */
+    --text-secondary: #475569;
+    /* Slate 600 */
+    --text-muted: #94a3b8;
+    /* Slate 400 */
+
+    --nav-height: 80px;
+    --sidebar-width: 260px;
+
+    /* Fonts */
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-display: 'Outfit', sans-serif;
+
+    /* Animation Speeds */
+    --ease-out: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.8s var(--ease-out) forwards;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.8s var(--ease-out) forwards;
+}
+
+.animate-scale-in {
+    animation: scaleIn 0.6s var(--ease-out) forwards;
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Utility Classes */
+.glass-panel {
+    background: var(--card-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--glass-shadow);
+    border-radius: 16px;
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}

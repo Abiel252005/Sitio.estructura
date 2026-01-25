@@ -1,108 +1,98 @@
 .breadcrumbs-container {
-    padding: 40px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    max-width: 800px;
+    padding: 3rem;
+    max-width: 900px;
     margin: 0 auto;
 }
 
 .breadcrumbs-container h2 {
-    color: #333;
-    border-bottom: 2px solid #667eea;
-    padding-bottom: 10px;
-    margin-bottom: 30px;
-    display: inline-block;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
 }
 
 .breadcrumb-demo {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    margin-bottom: 30px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.breadcrumb-demo:hover {
+    transform: translateY(-5px);
 }
 
 .breadcrumb-demo h3 {
-    font-size: 1.1rem;
-    color: #666;
-    margin-bottom: 15px;
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
+/* Base Styles */
 .breadcrumb {
     display: flex;
     flex-wrap: wrap;
     padding: 0;
     margin: 0;
     list-style: none;
+    align-items: center;
 }
 
 .breadcrumb-item {
     display: flex;
     align-items: center;
+    font-size: 1.1rem;
 }
 
 .breadcrumb-item+.breadcrumb-item::before {
-    display: inline-block;
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
-    color: #6c757d;
     content: "/";
+    color: var(--text-muted);
+    padding: 0 1rem;
+    font-weight: 300;
 }
 
 .breadcrumb-item a {
-    color: #667eea;
+    color: var(--text-secondary);
     text-decoration: none;
-    transition: color 0.2s;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
 .breadcrumb-item a:hover {
-    text-decoration: underline;
-    color: #764ba2;
+    color: var(--primary);
+    text-shadow: 0 0 8px var(--primary-glow);
 }
 
 .breadcrumb-item.active {
-    color: #6c757d;
-    pointer-events: none;
+    color: var(--text-primary);
+    font-weight: 600;
 }
 
-/* Modern Style */
+/* Modern Chip Style */
 .breadcrumb.modern .breadcrumb-item+.breadcrumb-item::before {
-    content: "›";
+    content: "→";
+    color: var(--accent);
     font-size: 1.2rem;
-    line-height: 1;
-    color: #aaa;
 }
 
 .breadcrumb.modern .breadcrumb-item a {
-    background: #f1f5f9;
-    padding: 5px 10px;
-    border-radius: 4px;
-    font-weight: 500;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    border: 1px solid transparent;
 }
 
 .breadcrumb.modern .breadcrumb-item a:hover {
-    background: #e2e8f0;
-    text-decoration: none;
-    transform: translateY(-1px);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--primary);
+    transform: translateY(-2px);
 }
 
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
-    opacity: 0;
-}
-
-.delay-1 {
-    animation-delay: 0.2s;
+.breadcrumb.modern .breadcrumb-item.active {
+    background: var(--primary-glow);
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    border: 1px solid var(--primary);
+    box-shadow: 0 0 15px var(--primary-glow);
 }

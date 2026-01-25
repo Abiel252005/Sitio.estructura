@@ -1,25 +1,68 @@
-<header class="topbar">
-    <div class="brand">Sitio-Estructura</div>
-    <nav class="menu">
-        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Inicio</a>
+<div class="layout-background">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+</div>
 
-        <a routerLink="/breadcrumbs" routerLinkActive="active">Breadcrumbs</a>
-        <a routerLink="/elementos-sitio" routerLinkActive="active">Elementos</a>
-        <a routerLink="/menu" routerLinkActive="active">Menú</a>
-        <a routerLink="/mapa-sitio" routerLinkActive="active">Mapa del sitio</a>
-        <a routerLink="/busqueda" routerLinkActive="active">Búsqueda</a>
+<header class="topbar glass-panel">
+    <div class="brand">
+        <span class="brand-text text-gradient">Sitio-Estructura</span>
+        <div class="brand-glow"></div>
+    </div>
+
+    <nav class="menu">
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-item">
+            <span class="nav-text">Inicio</span>
+            <div class="nav-indicator"></div>
+        </a>
+        <a routerLink="/breadcrumbs" routerLinkActive="active" class="nav-item">
+            <span class="nav-text">Breadcrumbs</span>
+            <div class="nav-indicator"></div>
+        </a>
+        <a routerLink="/elementos-sitio" routerLinkActive="active" class="nav-item">
+            <span class="nav-text">Elementos</span>
+            <div class="nav-indicator"></div>
+        </a>
+        <a routerLink="/menu" routerLinkActive="active" class="nav-item">
+            <span class="nav-text">Menú</span>
+            <div class="nav-indicator"></div>
+        </a>
+        <a routerLink="/mapa-sitio" routerLinkActive="active" class="nav-item">
+            <span class="nav-text">Mapa</span>
+            <div class="nav-indicator"></div>
+        </a>
+        <a routerLink="/busqueda" routerLinkActive="active" class="nav-item">
+            <span class="nav-text">Búsqueda</span>
+            <div class="nav-indicator"></div>
+        </a>
     </nav>
-    <form class="d-flex" (submit)="$event.preventDefault(); goSearch();">
-        <input class="form-control" placeholder="Buscar..." [(ngModel)]="quickQuery" name="quickQuery" />
-        <button class="btn-primary" type="submit">Ir</button>
+
+    <form class="search-form" (submit)="$event.preventDefault(); goSearch();">
+        <div class="search-wrapper glass-panel">
+            <input class="search-input" placeholder="Buscar..." [(ngModel)]="quickQuery" name="quickQuery" />
+            <button class="search-btn" type="submit">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+        </div>
     </form>
 </header>
 
-<main class="content">
-    <app-breadcrumb></app-breadcrumb>
-    <router-outlet></router-outlet>
+<main class="content-wrapper">
+    <div class="page-container animate-fade-in">
+        <app-breadcrumb></app-breadcrumb>
+        <router-outlet></router-outlet>
+    </div>
 </main>
 
-<footer class="footer">
-    <small>Desarrollo Web Profesional</small>
+<footer class="footer玻璃">
+    <div class="footer-content">
+        <small>© 2026 Desarrollo Web Profesional</small>
+        <div class="footer-links">
+            <span>Privacidad</span>
+            <span>Términos</span>
+        </div>
+    </div>
 </footer>

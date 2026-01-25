@@ -1,169 +1,200 @@
-/* Global Reset & Typography */
 :host {
-    font-family: 'Poppins', 'Segoe UI', sans-serif;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #f8f9fa;
-    color: #333;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    position: relative;
+    overflow-x: hidden;
 }
 
-/* Computed Topbar with Gradient & Blur */
+/* Background Effects */
+.layout-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+    background: radial-gradient(circle at top right, rgba(99, 102, 241, 0.05), transparent 70%),
+        radial-gradient(circle at bottom left, rgba(236, 72, 153, 0.05), transparent 70%);
+}
+
+.orb {
+    display: none;
+    /* Removed orbs for cleaner light theme */
+}
+
+/* Header */
 .topbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 1rem 2rem;
     position: sticky;
-    top: 0;
-    z-index: 1000;
+    top: 20px;
+    margin: 0 20px;
+    z-index: 100;
+    border-radius: 20px;
     transition: all 0.3s ease;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-.brand {
-    font-size: 1.5rem;
+.brand-text {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
     font-weight: 800;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: -0.5px;
-    cursor: pointer;
+    letter-spacing: -1px;
 }
 
-/* Navigation Menu */
+/* Menu */
 .menu {
     display: flex;
-    gap: 5px;
-    align-items: center;
+    gap: 0.5rem;
+    background: rgba(0, 0, 0, 0.03);
+    /* Subtle padding bg */
+    padding: 0.4rem 0.8rem;
+    border-radius: 50px;
 }
 
-.menu a {
+.nav-item {
+    position: relative;
     text-decoration: none;
-    color: #555;
-    font-weight: 500;
-    padding: 8px 16px;
-    border-radius: 20px;
-    transition: all 0.3s ease;
-    font-size: 0.95rem;
-}
-
-.menu a:hover {
-    color: #667eea;
-    background-color: rgba(102, 126, 234, 0.05);
-}
-
-.menu a.active {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    box-shadow: 0 4px 10px rgba(118, 75, 162, 0.3);
+    color: var(--text-secondary);
     font-weight: 600;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
 }
 
-/* Search Bar */
-form.d-flex {
+.nav-item:hover {
+    color: var(--primary);
+}
+
+.nav-item.active {
+    color: var(--primary);
+}
+
+.nav-indicator {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 4px;
+    height: 4px;
+    background: var(--primary);
+    border-radius: 50%;
+    transition: transform 0.3s var(--ease-out);
+}
+
+.nav-item.active .nav-indicator {
+    transform: translateX(-50%) scaleX(1);
+    width: 20px;
+    /* Stretch to line */
+    height: 3px;
+    border-radius: 2px;
+}
+
+/* Search */
+.search-wrapper {
     display: flex;
     align-items: center;
+    padding: 5px 15px;
+    border-radius: 50px;
     background: #fff;
-    padding: 5px;
-    border-radius: 25px;
-    border: 1px solid #e1e1e1;
-    transition: box-shadow 0.3s;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
 }
 
-form.d-flex:focus-within {
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-    border-color: #667eea;
+.search-wrapper:focus-within {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
 }
 
-input.form-control {
-    border: none;
-    outline: none;
-    padding: 8px 15px;
-    font-size: 0.9rem;
-    color: #555;
+.search-input {
     background: transparent;
-    width: 200px;
-}
-
-button.btn-primary {
-    background: #667eea;
-    color: white;
     border: none;
-    padding: 8px 18px;
-    border-radius: 20px;
+    color: var(--text-primary);
+    padding: 5px;
+    outline: none;
+    width: 150px;
+    transition: width 0.3s ease;
+}
+
+.search-input::placeholder {
+    color: #cbd5e1;
+}
+
+.search-input:focus {
+    width: 220px;
+}
+
+.search-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
     cursor: pointer;
-    font-size: 0.85rem;
-    font-weight: 600;
-    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
 }
 
-button.btn-primary:hover {
-    background: #5a6fd1;
+.search-btn:hover {
+    color: var(--primary);
 }
 
-/* Main Content Area */
-.content {
+/* Main Content */
+.content-wrapper {
     flex: 1;
-    padding: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 2rem;
+    margin-top: 2rem;
     width: 100%;
-    box-sizing: border-box;
-    animation: fadeIn 0.5s ease-out;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 10;
 }
 
 /* Footer */
-.footer {
-    background: #2d3748;
-    color: #e2e8f0;
-    padding: 20px 30px;
-    text-align: center;
-    font-size: 0.9rem;
+.footer玻璃 {
     margin-top: auto;
-    border-top: none;
+    padding: 2rem;
+    border-top: 1px solid #e2e8f0;
+    background: #fff;
 }
 
-.footer small {
-    opacity: 0.8;
-    font-size: 0.85rem;
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: var(--text-muted);
 }
 
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.footer-links {
+    display: flex;
+    gap: 20px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .topbar {
         flex-direction: column;
-        gap: 15px;
-        padding: 20px;
+        gap: 1rem;
+        position: relative;
+        top: 0;
+        margin: 0;
+        border-radius: 0;
     }
 
     .menu {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 10px;
-    }
-
-    form.d-flex {
-        width: 100%;
-    }
-
-    input.form-control {
-        width: 100%;
+        background: transparent;
     }
 }

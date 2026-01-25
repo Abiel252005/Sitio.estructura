@@ -1,37 +1,94 @@
 <div class="elementos-container">
-    <h1>Elementos de Interfaz</h1>
-    <p class="subtitle">Componentes reutilizables con estilos modernos.</p>
+    <h1 class="page-title text-gradient scale-in">ELEMENTOS UI</h1>
+    <p class="subtitle fade-in delay-1">Componentes de alta gama para interfaces modernas.</p>
 
     <div class="elements-grid">
         <!-- Card Section -->
-        <section class="element-section scale-in">
-            <h2>Tarjetas (Cards)</h2>
-            <div class="card">
-                <div class="card-image"></div>
-                <div class="card-content">
-                    <h3>Título de la Tarjeta</h3>
-                    <p>Descripción breve del contenido de la tarjeta. Ideal para resúmenes.</p>
-                    <button class="btn btn-primary">Ver más</button>
+        <section class="element-section glass-panel scale-in delay-1">
+            <h2 class="section-title">Tarjetas (Cards)</h2>
+            <div class="demo-card">
+                <div class="demo-card-image">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="demo-card-content">
+                    <h3>Futurismo</h3>
+                    <p>Diseño de tarjetas con efectos de cristal y bordes neón.</p>
+                    <button class="btn btn-primary">Explorar</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Carousel Section (New) -->
+        <section class="element-section glass-panel scale-in delay-2">
+            <h2 class="section-title">Carrusel Visual</h2>
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <div class="carousel-item item-1">
+                        <span>Slide 1</span>
+                    </div>
+                    <div class="carousel-item item-2">
+                        <span>Slide 2</span>
+                    </div>
+                    <div class="carousel-item item-3">
+                        <span>Slide 3</span>
+                    </div>
+                </div>
+                <div class="carousel-indicators">
+                    <span class="indicator active"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Loaders Section (New) -->
+        <section class="element-section glass-panel scale-in delay-3">
+            <h2 class="section-title">Indicadores de Carga</h2>
+            <div class="loader-demo-group">
+                <div class="loader-item">
+                    <div class="spinner-border"></div>
+                    <span>Cargando...</span>
+                </div>
+                <div class="loader-item">
+                    <div class="pulse-loader"></div>
+                    <span>Procesando</span>
+                </div>
+                <div class="loader-item">
+                    <div class="dots-loader">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <span>Espera</span>
                 </div>
             </div>
         </section>
 
         <!-- Buttons Section -->
-        <section class="element-section scale-in delay-1">
-            <h2>Botones</h2>
-            <div class="button-group">
-                <button class="btn btn-primary">Primario</button>
-                <button class="btn btn-secondary">Secundario</button>
-                <button class="btn btn-outline">Outline</button>
+        <section class="element-section glass-panel scale-in delay-1">
+            <h2 class="section-title">Navegación & Acción</h2>
+            <div class="button-group-vertical">
+                <button class="btn btn-primary">
+                    <span class="btn-text">Primary Action</span>
+                    <div class="btn-glow"></div>
+                </button>
+                <button class="btn btn-secondary">Secondary Action</button>
+                <button class="btn btn-outline">Outline Style</button>
             </div>
         </section>
 
         <!-- Inputs Section -->
-        <section class="element-section scale-in delay-2">
-            <h2>Inputs</h2>
-            <div class="input-group">
-                <input type="text" placeholder="Nombre completo" class="input-field">
-                <input type="email" placeholder="Correo electrónico" class="input-field">
+        <section class="element-section glass-panel scale-in delay-2">
+            <h2 class="section-title">Entradas de Datos</h2>
+            <div class="input-group-vertical">
+                <div class="input-wrapper">
+                    <input type="text" placeholder=" " class="input-field">
+                    <label class="floating-label">Nombre de Usuario</label>
+                </div>
+                <div class="input-wrapper">
+                    <input type="email" placeholder=" " class="input-field">
+                    <label class="floating-label">Correo Electrónico</label>
+                </div>
             </div>
         </section>
     </div>
