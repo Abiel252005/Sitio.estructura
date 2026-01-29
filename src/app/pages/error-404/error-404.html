@@ -1,1 +1,39 @@
-<p>error-404 works!</p>
+<div class="error-container">
+    <div class="error-content">
+        <div class="glitch-404">
+            <span class="number">4</span>
+            <div class="eye-wrapper" #eyeContainer>
+                <div class="eye-white">
+                    <div class="eye-pupil" [style.transform]="pupilTransform">
+                        <div class="eye-reflection"></div>
+                    </div>
+                </div>
+            </div>
+            <span class="number">4</span>
+        </div>
+
+        <h1 class="error-title">Página no encontrada</h1>
+        <p class="error-message">UPS! Parece que este enlace se ha perdido en el vacío.</p>
+
+        <div class="action-buttons">
+            <a routerLink="/" class="btn-home">
+                <span class="icon">➜</span> Regresar al Inicio
+            </a>
+        </div>
+    </div>
+
+    <!-- Decorative Elements -->
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+    <div class="bg-shape shape-4"></div>
+    <div class="bg-shape shape-5"></div>
+
+    <!-- Floating particles -->
+    <div class="particle p-1"></div>
+    <div class="particle p-2"></div>
+    <div class="particle p-3"></div>
+    <div class="particle p-4"></div>
+    <div class="particle p-5"></div>
+    <div class="particle p-6"></div>
+</div>
